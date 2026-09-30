@@ -29,7 +29,7 @@ public class Disciplina {
 
         double media = Media();
 
-        if (media > 7.0) {
+        if (media >= 7.0) {
 
             return true;
         } else {

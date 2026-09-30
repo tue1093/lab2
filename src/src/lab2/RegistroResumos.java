@@ -12,41 +12,81 @@ public class RegistroResumos {
 
     }
 
-    public void adicionaResumo(String tema, String conteudo) {
+    public int conta() {
+        int total = 0;
 
-        for (String t : temas) {
+        for (int i = 0; i < temas.length; i++) {
 
-            if (t != null) {
-                t = tema;
-                break;
+            if (temas[i] != null) {
+
+                total++;
             }
         }
-        for (String c : conteudos) {
 
-            if (c != null) {
-                c = conteudo;
+        return total;
+    }
+
+    public void adiciona(String tema, String conteudo) {
+
+        for (int i = 0; i < temas.length; i++) {
+
+            if (temas[i] == null) {
+                temas[i] = tema;
+                conteudos[i] = conteudo;
                 break;
             }
         }
     }
 
-    public String[] pegaResumos(){
+    public String[] pegaResumos() {
 
         String[] resumos = new String[temas.length];
 
-        for (int i = 0; i < temas.length; i++){
+        for (int i = 0; i < temas.length; i++) {
 
-            resumos[i] = temas[i] + ": " + conteudos[i];
+            if (temas[i] != null || conteudos[i] != null) {
 
+                resumos[i] = temas[i] + ": " + conteudos[i];
+            }
         }
-
         return resumos;
     }
 
-    public void exibeResumosCadastrados(){
+    public String imprimeResumos() {
 
-        
-
+        return "- " + conta() + " resumo(s) cadastrado(s)\n" + montaListaTemas();
     }
+
+    public boolean temResumo(String temaBuscado){
+
+        for (int i = 0; i < conta(); i++){
+
+            if (temas[i].equals(temaBuscado)){
+
+                return true;
+
+            }
+
+        }
+        return false;
+    }
+
+    private String montaListaTemas(){
+        String frase = "- ";
+        for (int i = 0; i < conta(); i++ ){
+
+            if (i == 0){
+
+                frase += temas[i];
+            } else {
+                frase += " | " + temas[i];
+
+            }
+
+        }
+
+        return frase;
+    }
+
 }
 
