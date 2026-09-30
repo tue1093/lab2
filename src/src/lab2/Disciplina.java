@@ -1,53 +1,59 @@
 package lab2;
 
+import java.util.Arrays;
+
 public class Disciplina {
 
     private String nomeDisciplina;
     private int horasEstudo;
-    private double nota1 = 0.0;
-    private double nota2 = 0.0;
-    private double nota3 = 0.0;
-    private double nota4 = 0.0;
+    private double[] notas = {0.0,0.0,0.0,0.0};
 
-    public Disciplina(String nomeDisciplina){
+
+    public Disciplina(String nomeDisciplina) {
 
         this.nomeDisciplina = nomeDisciplina;
 
     }
 
-    public int cadastraHoras(int horas){
+    public void cadastraHoras(int horas) {
 
         this.horasEstudo = horas;
 
     }
 
-    public void cadastraNotas(int nota,double ValorNota){
+    public void cadastraNota(int nota, double ValorNota) {
 
-        if (nota == 1) {
-            this.nota1 = nota;
-        }
-        if (nota == 2) {
-            this.nota2 = nota;
-        }
-        if (nota == 3) {
-            this.nota3 = nota;
-        }
-        if (nota == 4) {
-            this.nota4 = nota;
+        notas[nota - 1] = ValorNota;
+    }
+    public boolean aprovado() {
+
+        double media = Media();
+
+        if (media > 7.0) {
+
+            return true;
+        } else {
+            return false;
         }
 
     }
+    public double Media() {
 
-    public boolean aprovado(){
+        double media = 0.0;
 
+        for (double nota : notas){
+            media += nota;
+        }
 
-    }
-
-    public double Media(){
-
-        double media = (nota1+nota2+nota3+nota4) / 4;
+        media /= 4;
 
         return media;
+    }
+
+    @Override
+    public String toString(){
+        double media = Media();
+        return this.nomeDisciplina + " " + this.horasEstudo + " " + media + " " + Arrays.toString(notas);
     }
 
 }

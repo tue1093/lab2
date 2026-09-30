@@ -9,6 +9,7 @@ public class RegistroTempoOnline {
     public RegistroTempoOnline(String nomeDisciplina){
 
         this.nomeDisciplina = nomeDisciplina;
+        this.tempoEsperado = 120;
     }
 
     public RegistroTempoOnline(String nomeDisciplina, int tempoEsperado){
@@ -30,7 +31,6 @@ public class RegistroTempoOnline {
         }
         return false;
     }
-
 
     @Override
     public String toString(){

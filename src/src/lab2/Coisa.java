@@ -9,6 +9,7 @@ public class Coisa {
         controlarDisciplina();
         System.out.println("-----");
         registrarResumos();
+
     }
     public static void registrarDescanso() {
         Descanso descanso = new Descanso();
@@ -47,6 +48,7 @@ public class Coisa {
         System.out.println(prog2.aprovado());
         System.out.println(prog2.toString());
     }
+
     private static void registrarResumos() {
         RegistroResumos meusResumos = new RegistroResumos(100);  // 100 resumos
 
@@ -68,4 +70,6 @@ public class Coisa {
         System.out.println(meusResumos.temResumo("Classes"));
         System.out.println(meusResumos.temResumo("Objetos"));
     }
+
+
 }
