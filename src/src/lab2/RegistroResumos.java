@@ -2,22 +2,21 @@ package lab2;
 
 public class RegistroResumos {
 
-    private String[] temas;
-    private String[] conteudos;
+    private Resumo[] Resumo;
+    private int numResumos;
 
     public RegistroResumos(int numeroDeResumos) {
 
-        temas = new String[numeroDeResumos];
-        conteudos = new String[numeroDeResumos];
-
+        this.numResumos = numeroDeResumos;
+        this.Resumo = new Resumo[numeroDeResumos];
     }
 
     public int conta() {
         int total = 0;
 
-        for (int i = 0; i < temas.length; i++) {
+        for (int i = 0; i < Resumo.length; i++) {
 
-            if (temas[i] != null) {
+            if (Resumo[i] != null) {
 
                 total++;
             }
@@ -28,14 +27,13 @@ public class RegistroResumos {
 
     public void adiciona(String tema, String conteudo) {
 
-
         if (temResumo(tema)){return;}
 
-        for (int i = 0; i < temas.length; i++) {
+        for (int i = 0; i < Resumo.length; i++) {
 
-            if (temas[i] == null) {
-                temas[i] = tema;
-                conteudos[i] = conteudo;
+            if (Resumo[i] == null) {
+                Resumo r1 = new Resumo(tema,conteudo);
+                Resumo[i] = r1;
                 break;
             }
         }
@@ -43,13 +41,13 @@ public class RegistroResumos {
 
     public String[] pegaResumos() {
 
-        String[] resumos = new String[temas.length];
+        String[] resumos = new String[Resumo.length];
 
-        for (int i = 0; i < temas.length; i++) {
+        for (int i = 0; i < Resumo.length; i++) {
 
-            if (temas[i] != null || conteudos[i] != null) {
+            if (Resumo[i] != null) {
 
-                resumos[i] = temas[i] + ": " + conteudos[i];
+                resumos[i] = Resumo[i].getTema() + ": " + Resumo[i].getConteudo();
             }
         }
         return resumos;
@@ -64,7 +62,7 @@ public class RegistroResumos {
 
         for (int i = 0; i < conta(); i++){
 
-            if (temas[i].equals(temaBuscado)){
+            if (Resumo[i].getTema().equals(temaBuscado)){
 
                 return true;
             }
@@ -77,15 +75,11 @@ public class RegistroResumos {
 
             if (i == 0){
 
-                frase += temas[i];
+                frase += Resumo[i].getTema();
             } else {
-                frase += " | " + temas[i];
+                frase += " | " + Resumo[i].getTema();
             }
         }
         return frase;
     }
-
-
-
 }
-
