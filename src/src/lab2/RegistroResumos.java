@@ -28,6 +28,9 @@ public class RegistroResumos {
 
     public void adiciona(String tema, String conteudo) {
 
+
+        if (temResumo(tema)){return;}
+
         for (int i = 0; i < temas.length; i++) {
 
             if (temas[i] == null) {
@@ -64,13 +67,10 @@ public class RegistroResumos {
             if (temas[i].equals(temaBuscado)){
 
                 return true;
-
             }
-
         }
         return false;
     }
-
     private String montaListaTemas(){
         String frase = "- ";
         for (int i = 0; i < conta(); i++ ){
@@ -80,13 +80,12 @@ public class RegistroResumos {
                 frase += temas[i];
             } else {
                 frase += " | " + temas[i];
-
             }
-
         }
-
         return frase;
     }
+
+
 
 }
 
