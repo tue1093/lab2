@@ -1,30 +1,51 @@
 package lab2;
 
+/**
+ * A classe Descanso serve para acompanhar a rotinha de descanso de um aluno
+ * Ele deve descansar 26 horas ou mais por semana para estar descansado
+ * O aluno começa cansado
+ *
+ * @author Mateus Queiroz de Andrade
+ */
 public class Descanso {
 
     private int horasDescanso;
     private int numeroSemanas;
     private String statusGeral;
 
-
+    /**
+     * Inicializa o objeto da classe descanso, definindo horasDescanso e numeroSemanas como 1 e o statusGeral como "cansado"
+     */
     public Descanso() {
         this.horasDescanso = 1;
         this.numeroSemanas = 1;
         this.statusGeral = "cansado";
     }
 
+    /**
+     * define uma nova quantidade de horas descansadas
+     * @param valor
+     */
     public void defineHorasDescanso(int valor) {
 
         this.horasDescanso = valor;
     }
 
+    /**
+     * define um novo número de semanas
+     * @param valor
+     */
     public void defineNumeroSemanas(int valor) {
 
         this.numeroSemanas = valor;
 
     }
 
-    public String getStatusGeral() {
+    /**
+     * modifica o atributo statusGeral para descansado caso o aluno tenha cumprido as 26 horas semanais necessarias.
+     * @return o statusGeral do aluno
+     */
+    public String getStatusGeral() { // modifica o atributo statusGeral para descansado caso o aluno tenha cumprido as 26 horas semanais necessarias.
 
         if ((this.horasDescanso / this.numeroSemanas) >= 26) {
 
