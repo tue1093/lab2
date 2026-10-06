@@ -6,13 +6,13 @@ public class Disciplina {
 
     private String nomeDisciplina;
     private int horasEstudo;
-    private double[] notas = {0.0,0.0,0.0,0.0};
+    private double[] notas;
 
 
     public Disciplina(String nomeDisciplina) {
 
         this.nomeDisciplina = nomeDisciplina;
-
+        this.notas = new double[]{0.0,0.0,0.0,0.0};
     }
 
     public void cadastraHoras(int horas) {

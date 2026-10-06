@@ -38,5 +38,4 @@ public class RegistroTempoOnline {
         return this.nomeDisciplina + " " + this.tempoInvestidoOnline + "/" + this.tempoEsperado;
 
     }
-
 }

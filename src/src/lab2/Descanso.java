@@ -2,13 +2,15 @@ package lab2;
 
 public class Descanso {
 
-    private int horasDescanso = 1;
-    private int numeroSemanas = 1;
-    private String statusGeral = "cansado";
+    private int horasDescanso;
+    private int numeroSemanas;
+    private String statusGeral;
 
 
     public Descanso() {
-
+        this.horasDescanso = 1;
+        this.numeroSemanas = 1;
+        this.statusGeral = "cansado";
     }
 
     public void defineHorasDescanso(int valor) {
