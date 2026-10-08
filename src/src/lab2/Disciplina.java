@@ -47,12 +47,12 @@ public class Disciplina {
      * Alem disso tambem recebe como parametro um array contendo os pesos de cada nota
      * @param nomeDisciplina
      */
-    public Disciplina(String nomeDisciplina,int numNotas, int[] pesos2) {
+    public Disciplina(String nomeDisciplina,int numNotas, int[] pesos) {
 
         this.nomeDisciplina = nomeDisciplina;
         this.horasEstudo = 0;
         this.notas = new double[numNotas];
-        this.pesos = pesos2;
+        this.pesos = pesos;
 
         for (int i = 0; i < numNotas; i++) {
 
