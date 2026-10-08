@@ -14,6 +14,7 @@ public class Disciplina {
     private String nomeDisciplina;
     private int horasEstudo;
     private double[] notas;
+    private int[] pesos;
 
     /**
      * Inicializa uma nova disciplina recebendo o nome da disciplina e definindo as 4 notas iniciais como 0.0.
@@ -22,7 +23,34 @@ public class Disciplina {
     public Disciplina(String nomeDisciplina) {
 
         this.nomeDisciplina = nomeDisciplina;
+        this.horasEstudo = 0;
         this.notas = new double[]{0.0,0.0,0.0,0.0};
+    }
+
+    public Disciplina(String nomeDisciplina,int numNotas) {
+
+        this.nomeDisciplina = nomeDisciplina;
+        this.horasEstudo = 0;
+        this.notas = new double[numNotas];
+
+        for (int i = 0; i < numNotas; i++) {
+
+            this.notas[i] = 0.0;
+        }
+    }
+
+
+    public Disciplina(String nomeDisciplina,int numNotas, int[] pesos2) {
+
+        this.nomeDisciplina = nomeDisciplina;
+        this.horasEstudo = 0;
+        this.notas = new double[numNotas];
+        this.pesos = pesos2;
+
+        for (int i = 0; i < numNotas; i++) {
+
+            this.notas[i] = 0.0;
+        }
     }
 
     /**
@@ -76,6 +104,21 @@ public class Disciplina {
         media /= 4;
 
         return media;
+    }
+
+    public double MediaPonderada(){
+        double soma = 0;
+        double mediaPonderada = 0.0;
+
+        for (int i = 0; i < notas.length;i++){
+
+            mediaPonderada += pesos[i] * notas[i];
+            soma += pesos[i];
+        }
+
+        mediaPonderada /= soma;
+
+        return (double) mediaPonderada;
     }
 
     /**

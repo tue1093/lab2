@@ -1,5 +1,7 @@
 package lab2;
 
+import java.util.Arrays;
+
 /**
  * Classe responsável pelo armazenamento dos resumos criados pelo aluno.
  * Armazena uma quantidade limitada de resumos.
@@ -9,7 +11,7 @@ package lab2;
  */
 public class RegistroResumos {
 
-    private Resumo[] Resumo;
+    private Resumo[] resumo;
     private int numResumos;
 
     /**
@@ -20,7 +22,7 @@ public class RegistroResumos {
     public RegistroResumos(int numeroDeResumos) {
 
         this.numResumos = numeroDeResumos;
-        this.Resumo = new Resumo[numeroDeResumos];
+        this.resumo = new Resumo[numeroDeResumos];
     }
 
     /**
@@ -30,9 +32,9 @@ public class RegistroResumos {
     public int conta() {
         int total = 0;
 
-        for (int i = 0; i < Resumo.length; i++) {
+        for (int i = 0; i < resumo.length; i++) {
 
-            if (Resumo[i] != null) {
+            if (resumo[i] != null) {
 
                 total++;
             }
@@ -50,11 +52,11 @@ public class RegistroResumos {
 
         if (temResumo(tema)){return;}
 
-        for (int i = 0; i < Resumo.length; i++) {
+        for (int i = 0; i < resumo.length; i++) {
 
-            if (Resumo[i] == null) {
+            if (resumo[i] == null) {
                 Resumo r1 = new Resumo(tema,conteudo);
-                Resumo[i] = r1;
+                resumo[i] = r1;
                 break;
             }
         }
@@ -66,13 +68,13 @@ public class RegistroResumos {
      */
     public String[] pegaResumos() {
 
-        String[] resumos = new String[Resumo.length];
+        String[] resumos = new String[resumo.length];
 
-        for (int i = 0; i < Resumo.length; i++) {
+        for (int i = 0; i < resumo.length; i++) {
 
-            if (Resumo[i] != null) {
+            if (resumo[i] != null) {
 
-                resumos[i] = Resumo[i].getTema() + ": " + Resumo[i].getConteudo();
+                resumos[i] = resumo[i].getTema() + ": " + resumo[i].getConteudo();
             }
         }
         return resumos;
@@ -96,12 +98,38 @@ public class RegistroResumos {
 
         for (int i = 0; i < conta(); i++){
 
-            if (Resumo[i].getTema().equals(temaBuscado)){
+            if (resumo[i].getTema().equals(temaBuscado)){
 
                 return true;
             }
         }
         return false;
+    }
+
+    public String[] busca(String chaveBusca) {
+        int quantidadeTemasComChave = 0;
+        String chaveLower = chaveBusca.toLowerCase();
+        String[] temasComChave;
+
+        for (int i = 0; i < conta(); i++) {
+
+            if (resumo[i].getConteudo().toLowerCase().contains(chaveLower)) {
+
+                quantidadeTemasComChave += 1;
+            }
+        }
+        temasComChave = new String[quantidadeTemasComChave];
+
+        for (int i = 0; i < quantidadeTemasComChave;i++){
+
+            if (resumo[i].getConteudo().toLowerCase().contains(chaveLower)) {
+
+                temasComChave[i] = resumo[i].getTema();
+                }
+            }
+
+        Arrays.sort(temasComChave);
+        return temasComChave;
     }
 
     /**
@@ -114,9 +142,9 @@ public class RegistroResumos {
 
             if (i == 0){
 
-                frase += Resumo[i].getTema();
+                frase += resumo[i].getTema();
             } else {
-                frase += " | " + Resumo[i].getTema();
+                frase += " | " + resumo[i].getTema();
             }
         }
         return frase;
