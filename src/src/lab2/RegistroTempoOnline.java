@@ -33,7 +33,7 @@ public class RegistroTempoOnline {
     }
 
     /**
-     * Método que permite adicionar uma quantidade de tempo ao atributo tempoInvestidoOnline referente ao tempo dedicado a disciplina.
+     * Metodo que permite adicionar uma quantidade de tempo ao atributo tempoInvestidoOnline referente ao tempo dedicado a disciplina.
      * @param tempo tempo adicional a ser somado ao total de tempo investido online
      */
     public void adicionaTempoOnline(int tempo){
@@ -42,7 +42,7 @@ public class RegistroTempoOnline {
     }
 
     /**
-     * Método que confere se o Aluno atingiu o tempo online esperado pela disciplina
+     * Metodo que confere se o Aluno atingiu o tempo online esperado pela disciplina
      * @return true se o tempo investido for maior ou igual ao tempo esperado, false caso contrário
      */
     public boolean atingiuMetaTempoOnline(){
@@ -55,8 +55,8 @@ public class RegistroTempoOnline {
     }
 
     /**
-     * Override do método toString
-     * @return retorna uma String com nome da disciplina + o tempo investido online pelo aluno / tempo esperado pela disciplina
+     * Override do metodo toString
+     * @return uma String com nome da disciplina + o tempo investido online pelo aluno / tempo esperado pela disciplina
      */
     @Override
     public String toString(){

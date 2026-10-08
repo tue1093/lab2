@@ -26,7 +26,7 @@ public class RegistroResumos {
     }
 
     /**
-     * Método responsável por passar pelo array de resumos e contar as posições que já foram preenchidas por resumos
+     * Metodo responsável por passar pelo array de resumos e contar as posições que já foram preenchidas por resumos
      * @return total de posições já preenchidas com resumos
      */
     public int conta() {
@@ -44,7 +44,7 @@ public class RegistroResumos {
     }
 
     /**
-     * Método que adiciona um novo resumo ao array Resumos em uma posição que ainda não foi ocupada por um resumo e caso não tenha um resumo já cadastrado com o mesmo nome do novo adicionado.
+     * Metodo que adiciona um novo resumo ao array Resumos em uma posição que ainda não foi ocupada por um resumo e caso não tenha um resumo já cadastrado com o mesmo nome do novo adicionado.
      * @param tema do resumo
      * @param conteudo do resumo
      */
@@ -63,7 +63,7 @@ public class RegistroResumos {
     }
 
     /**
-     *  Método que gera um array com a formatação tema: resumo para cada resumo preenchido no array Resumos.
+     *  Metodo que gera um array com a formatação tema: resumo para cada resumo preenchido no array Resumos.
      * @return o array resumos com a formatação tema: resumo para cada resumo
      */
     public String[] pegaResumos() {
@@ -81,7 +81,7 @@ public class RegistroResumos {
     }
 
     /**
-     *  Método que imprime a quantidade de resumos cadastrados e na linha seguinte os temas dos resumos cadastrados.
+     *  Metodo que imprime a quantidade de resumos cadastrados e na linha seguinte os temas dos resumos cadastrados.
      * @return uma String contendo a quantidade de resumos cadastrados e na linha seguinte os temas dos resumos cadastrados.
      */
     public String imprimeResumos() {
@@ -90,7 +90,7 @@ public class RegistroResumos {
     }
 
     /**
-     * Método que percorre o array Resumos buscando por um tema informado pelo aluno.
+     * Metodo que percorre o array Resumos buscando por um tema informado pelo aluno.
      * @param temaBuscado
      * @return true caso exista um resumo com esse tema informado, false caso contrário
      */
@@ -106,6 +106,12 @@ public class RegistroResumos {
         return false;
     }
 
+    /**
+     * Metodo responsavel por varrer o array procurando por resumos cujo conteúdo inclui uma palavra recebida como parâmetro.
+     * Caso exista um ou mais resumos que possuam a palavra será retornado um array em ordem alfabetica com os temas desses resumos
+     * @param chaveBusca palavra que deve ser buscada dentro dos resumos
+     * @return array em ordem alfabetica com os temas dos resumos que possuem a palavra buscada
+     */
     public String[] busca(String chaveBusca) {
         int quantidadeTemasComChave = 0;
         String chaveLower = chaveBusca.toLowerCase();
@@ -133,7 +139,7 @@ public class RegistroResumos {
     }
 
     /**
-     *  Método auxiliar para montar uma String com os temas dos resumos cadastrados.
+     *  Metodo auxiliar para montar uma String com os temas dos resumos cadastrados.
      * @return String montada com a formatação - resumo1 | resumo2
      */
     private String montaListaTemas(){

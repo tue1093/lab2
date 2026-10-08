@@ -46,15 +46,6 @@ public class Coisa {
         prog2.cadastraNota(4, 10.0);
         System.out.println(prog2.aprovado());
         System.out.println(prog2.toString());
-
-
-        int[] pesosTeste = {2,3,4,5};
-        Disciplina prog2PONDERADA = new Disciplina("LABP2",4, pesosTeste );
-        prog2PONDERADA.cadastraNota(1, 5.0);
-        prog2PONDERADA.cadastraNota(2, 6.0);
-        prog2PONDERADA.cadastraNota(3, 7.0);
-        prog2PONDERADA.cadastraNota(4, 10.0);
-        System.out.println(prog2PONDERADA.MediaPonderada());
     }
     private static void registrarResumos() {
         RegistroResumos meusResumos = new RegistroResumos(100);  // 100 resumos
@@ -62,24 +53,17 @@ public class Coisa {
         meusResumos.adiciona("Classes", "Classes definem um tipo e a base de código para criação de objetos.");
         meusResumos.adiciona("Tipo", "Identifica a semântica (operações e significados) de um conjunto de dados.");
 
-
         String[] resumos = meusResumos.pegaResumos();
-
 
         for (int i = 0; i < meusResumos.conta(); i++) {
             System.out.println(resumos[i]);
         }
-
 
         System.out.println();
         System.out.println("Resumos: ");
         System.out.println(meusResumos.imprimeResumos());
         System.out.println(meusResumos.temResumo("Classes"));
         System.out.println(meusResumos.temResumo("Objetos"));
-
-        for (String tema: meusResumos.busca("um")){
-                System.out.println(tema);
-        }
     }
 }
 

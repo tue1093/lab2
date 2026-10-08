@@ -21,7 +21,7 @@ public class Resumo {
     }
 
     /**
-     * Método que retorna o tema do resumo criado.
+     * Metodo que retorna o tema do resumo criado.
      * @return tema do resumo
      */
     public String getTema() {
@@ -29,7 +29,7 @@ public class Resumo {
     }
 
     /**
-     * Método que retorna o contéudo do resumo criado.
+     * Metodo que retorna o contéudo do resumo criado.
      * @return conteúdo do resumo
      */
     public String getConteudo(){

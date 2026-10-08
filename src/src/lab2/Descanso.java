@@ -23,7 +23,7 @@ public class Descanso {
     }
 
     /**
-     * Método que define uma nova quantidade de horas descansadas
+     * Metodo que define uma nova quantidade de horas descansadas
      * @param valor que o atributo horasDescanso deve assumir
      */
     public void defineHorasDescanso(int valor) {
@@ -32,7 +32,7 @@ public class Descanso {
     }
 
     /**
-     * Método que define um novo número de semanas
+     * Metodo que define um novo número de semanas
      * @param valor que o atributo numeroSemanas deve assumir
      */
     public void defineNumeroSemanas(int valor) {
@@ -42,7 +42,7 @@ public class Descanso {
     }
 
     /**
-     * Método que modifica o atributo statusGeral para descansado caso o aluno tenha cumprido as 26 horas semanais necessárias.
+     * Metodo que modifica o atributo statusGeral para descansado caso o aluno tenha cumprido as 26 horas semanais necessárias.
      * @return o statusGeral do aluno, descansado ou cansado
      */
     public String getStatusGeral() { // modifica o atributo statusGeral para descansado caso o aluno tenha cumprido as 26 horas semanais necessarias.

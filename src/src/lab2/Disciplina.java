@@ -26,7 +26,10 @@ public class Disciplina {
         this.horasEstudo = 0;
         this.notas = new double[]{0.0,0.0,0.0,0.0};
     }
-
+    /**
+     * Inicializa uma nova disciplina recebendo o nome da disciplina e recebe como parametro o numero total de notas
+     * @param nomeDisciplina
+     */
     public Disciplina(String nomeDisciplina,int numNotas) {
 
         this.nomeDisciplina = nomeDisciplina;
@@ -39,7 +42,11 @@ public class Disciplina {
         }
     }
 
-
+    /**
+     * Inicializa uma nova disciplina recebendo o nome da disciplina e recebe como parametro o numero total de notas
+     * Alem disso tambem recebe como parametro um array contendo os pesos de cada nota
+     * @param nomeDisciplina
+     */
     public Disciplina(String nomeDisciplina,int numNotas, int[] pesos2) {
 
         this.nomeDisciplina = nomeDisciplina;
@@ -54,7 +61,7 @@ public class Disciplina {
     }
 
     /**
-     * Método que define um novo valor para horasEstudo.
+     * Metodo que define um novo valor para horasEstudo.
      * @param horas valor que horasEstudo deve assumir
      */
     public void cadastraHoras(int horas) {
@@ -64,7 +71,7 @@ public class Disciplina {
     }
 
     /**
-     *  Método que define um novo valor para uma das quatro notas.
+     *  Metodo que define um novo valor para uma das quatro notas.
      * @param nota uma das notas de 1 a 4 que se deseja modificar o valor
      * @param ValorNota novo valor da nota selecionada
      */
@@ -74,7 +81,7 @@ public class Disciplina {
     }
 
     /**
-     * Método que analisa a média do aluno e a sua situação de aprovação frente a disciplina.
+     * Metodo que analisa a média do aluno e a sua situação de aprovação frente a disciplina.
      * @return true caso a média seja maior ou igual a 7.0, false caso contrário
      */
     public boolean aprovado() {
@@ -90,7 +97,7 @@ public class Disciplina {
     }
 
     /**
-     * Método auxiliar para o cálculo da média das 4 notas
+     * Metodo auxiliar para o cálculo da média das 4 notas
      * @return A média das notas
      */
     public double Media() {
@@ -106,6 +113,10 @@ public class Disciplina {
         return media;
     }
 
+    /**
+     * Metodo que calcula a média ponderada das notas com os pesos informados para cada uma delas
+     * @return o valor da média ponderada
+     */
     public double MediaPonderada(){
         double soma = 0;
         double mediaPonderada = 0.0;
@@ -122,7 +133,7 @@ public class Disciplina {
     }
 
     /**
-     *  Override do método toString
+     *  Override do metodo toString
      *
      * @return o nome da disciplina em seguida as horas estudas, a media das notas e o valor de cada uma das notas
      */
